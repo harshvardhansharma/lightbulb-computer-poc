@@ -1,0 +1,8 @@
+.venv/
+.env
+__pycache__/
+captures/
+web/models/
+.DS_Store
+*.jpg
+*.png

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lightbulb Computer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Everything black = no light from the projector. -->
+  <div id="surface"></div>
+  <canvas id="overlay"></canvas>
+
+  <div id="calib" hidden><div id="calib-dot"></div><div id="calib-msg"></div></div>
+
+  <div id="hud">
+    <span id="hud-status">starting…</span>
+    <span id="hud-mic-wrap"><span id="hud-mic"></span></span>
+    <span id="hud-voice"></span>
+  </div>
+
+  <form id="cmd" hidden><input id="cmd-input" placeholder="Type a command… (Esc to close)" autocomplete="off"></form>
+
+  <div id="debug" hidden>
+    <canvas id="debug-canvas"></canvas>
+    <select id="camera-select"></select>
+  </div>
+
+  <div id="help" hidden>
+    <h2>Lightbulb Computer</h2>
+    <p><b>P</b> fullscreen on projector &nbsp; <b>C</b> calibrate &nbsp; <b>D</b> camera debug &nbsp; <b>/</b> type command &nbsp; <b>W</b> wake-word on/off &nbsp; <b>H</b> help</p>
+    <p>Say <i>“Lightbulb, set a 5 minute timer”</i>, <i>“Lightbulb, what is this?”</i> (while pointing), <i>“Lightbulb, show me a map of Kyoto”</i>, <i>“Lightbulb, where is Chamonix on this map?”</i></p>
+    <p>Point to move the cursor · hold still on a button to press it · pinch to grab and move widgets or pan maps.</p>
+  </div>
+
+  <video id="video" playsinline muted hidden></video>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
